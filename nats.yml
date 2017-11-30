@@ -62,6 +62,5 @@ spec:
         env:
         - name: max_inflight
           value: "1"
-        - name: ack_timeout    # Max duration of any async task / request
-          value: "30s"
-
+        - name: ack_wait    # Max duration of any async task / request
+          value: "180s"

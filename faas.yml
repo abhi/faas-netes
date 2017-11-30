@@ -35,6 +35,11 @@ spec:
       - name: faas-netesd
         image: functions/faas-netesd:0.3.4
         imagePullPolicy: Always
+        env:
+        - name: write_timeout
+          value: "120"
+        - name: read_timeout
+          value: "120"
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -78,6 +83,10 @@ spec:
         env:
         - name: functions_provider_url
           value: "http://faas-netesd.default.svc.cluster.local:8080/"
+        - name: write_timeout
+          value: "120"
+        - name: read_timeout
+          value: "120"
         ports:
         - containerPort: 8080
           protocol: TCP
